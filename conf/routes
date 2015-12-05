@@ -1,0 +1,37 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+GET     /loginPage                  controllers.Application.loginPage
+
+POST    /login                      controllers.Application.loginAction
+
+GET     /logout                     controllers.Application.logOutAction
+
+GET     /addUser                    controllers.Application.addUserPage
+
+POST    /user                       controllers.Application.addUser
+
+GET     /getAllUsers                controllers.Application.getUsers
+
+GET     /inspectUser/:name     controllers.Application.inspectUser(name: String)
+
+GET     /addGeocach                 controllers.Application.addGeocachPage
+
+POST    /geochach                   controllers.Application.addGeocach
+
+GET     /getUserGeocaches           controllers.Application.getGeocachesCurrentUser
+
+GET     /getAllGeocaches            controllers.Application.getGeocachesAll
+
+GET     /inspectGeocaches/:name     controllers.Application.inspectGeocach(name: String)
+
+POST    /deleteGeocach/:name        controllers.Application.deleteGeocach(name: String)
+
+POST    /markGeocachAsVisited/:name controllers.Application.markGeocachAsVisited(name: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
